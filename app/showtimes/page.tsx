@@ -1,0 +1,7 @@
+import Link from "next/link";
+import { PageHeading } from "@/components/site-ui";
+import { cinemas, movies, screenings } from "@/lib/mock-data";
+
+export default function ShowtimesPage() {
+  return <main className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6"><PageHeading eyebrow="Plan your visit" title="Showtimes" description="Compare every available screening, format, language, and seat availability in one place." /><div className="mt-12 overflow-x-auto rounded-2xl border border-purple-100 bg-white shadow-sm"><table className="w-full min-w-[44rem] text-left text-sm"><thead className="bg-purple-700 text-white"><tr><th className="p-4">Film</th><th className="p-4">Cinema</th><th className="p-4">Starts</th><th className="p-4">Details</th><th className="p-4"></th></tr></thead><tbody>{screenings.map((screening) => <tr key={screening.id} className="border-t border-slate-100"><td className="p-4 font-semibold">{movies.find((movie) => movie.id === screening.movieId)?.title}</td><td className="p-4">{cinemas.find((cinema) => cinema.id === screening.cinemaId)?.name}</td><td className="p-4">{new Date(screening.startsAt).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}</td><td className="p-4">{screening.format} · {screening.language} · {screening.availableSeats} seats</td><td className="p-4"><Link href={`/booking/${screening.id}`} className="cursor-pointer font-semibold text-purple-700 hover:underline">Book</Link></td></tr>)}</tbody></table></div></main>;
+}

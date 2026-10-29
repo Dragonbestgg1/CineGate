@@ -1,0 +1,7 @@
+import Link from "next/link";
+import { PageHeading, Price } from "@/components/site-ui";
+import { ticketTypes } from "@/lib/mock-data";
+
+export default function TicketsPage() {
+  return <main className="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6"><PageHeading eyebrow="Straightforward pricing" title="Ticket prices" description="All prices are shown before checkout. Special-format screenings may have a small supplement." /><div className="mt-12 overflow-hidden rounded-2xl border border-purple-100 bg-white shadow-sm"><table className="w-full text-left"><thead className="bg-purple-50 text-purple-900"><tr><th className="p-4">Ticket</th><th className="p-4">Who it is for</th><th className="p-4 text-right">Price</th></tr></thead><tbody>{ticketTypes.map((ticket) => <tr key={ticket.id} className="border-t border-slate-100"><td className="p-4 font-semibold text-slate-950">{ticket.name}</td><td className="p-4 text-sm text-slate-600">{ticket.description}</td><td className="p-4 text-right font-bold text-purple-700"><Price cents={ticket.priceCents} /></td></tr>)}</tbody></table></div><div className="mt-8 rounded-2xl bg-slate-950 p-6 text-white"><h2 className="text-xl font-bold">Pay safely later</h2><p className="mt-2 text-slate-300">This prototype uses mock prices. The “Continue to payment” step is ready to be connected to Stripe Checkout when the account is configured.</p><Link href="/showtimes" className="mt-5 inline-flex cursor-pointer rounded-lg bg-purple-500 px-4 py-2 font-semibold hover:bg-purple-400">Choose a screening</Link></div></main>;
+}

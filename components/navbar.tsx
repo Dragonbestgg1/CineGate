@@ -5,8 +5,13 @@ import { Menu } from "lucide-react";
 
 const navigation = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: "/movies", label: "Films" },
+  { href: "/showtimes", label: "Showtimes" },
+  { href: "/cinemas", label: "Cinemas" },
+  { href: "/tickets", label: "Ticket prices" },
+  { href: "/reviews", label: "Reviews" },
   { href: "/contact", label: "Contact" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export default function NavBar() {
