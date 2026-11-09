@@ -1,5 +1,15 @@
+"use client";
+
 import Link from "next/link";
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
+import { useState } from "react";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "./ui/sheet";
 import { Button } from "./ui/button";
 import { Menu } from "lucide-react";
 
@@ -15,8 +25,10 @@ const navigation = [
 ];
 
 export default function NavBar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger
         aria-label="Open navigation menu"
         render={
@@ -40,6 +52,7 @@ export default function NavBar() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={() => setOpen(false)}
               className="cursor-pointer rounded-md px-3 py-2 text-sm font-medium outline-none transition-colors hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring"
             >
               {item.label}

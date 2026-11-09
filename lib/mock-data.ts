@@ -1,5 +1,11 @@
-
-import type { Cinema, Movie, Review, Screening, Seat, TicketType } from "./types";
+import type {
+  Cinema,
+  Movie,
+  Review,
+  Screening,
+  Seat,
+  TicketType,
+} from "./types";
 
 // Movie catalogue content for the home page, catalogue, and movie detail pages.
 export const movies = [
@@ -77,8 +83,14 @@ export const cinemas = [
     city: "Riga, Latvia",
     phone: "+371 20 123 456",
     email: "riga@cinegate.lv",
-    mapEmbedUrl: "https://www.google.com/maps?q=Brivibas%20iela%2045%2C%20Riga&output=embed",
-    facilities: ["IMAX screen", "Wheelchair access", "Snack bar", "Bike parking"],
+    mapEmbedUrl:
+      "https://www.google.com/maps?q=Brivibas%20iela%2045%2C%20Riga&output=embed",
+    facilities: [
+      "IMAX screen",
+      "Wheelchair access",
+      "Snack bar",
+      "Bike parking",
+    ],
   },
   {
     id: "cinema-jurmala",
@@ -88,7 +100,8 @@ export const cinemas = [
     city: "Jūrmala, Latvia",
     phone: "+371 20 654 321",
     email: "jurmala@cinegate.lv",
-    mapEmbedUrl: "https://www.google.com/maps?q=Jomas%20iela%2036%2C%20Jurmala&output=embed",
+    mapEmbedUrl:
+      "https://www.google.com/maps?q=Jomas%20iela%2036%2C%20Jurmala&output=embed",
     facilities: ["Family room", "Wheelchair access", "Snack bar"],
   },
 ] satisfies Cinema[];
@@ -193,7 +206,8 @@ export const ticketTypes = [
   {
     id: "ticket-child",
     name: "Child",
-    description: "For guests aged 4–12. Children under 4 enter free with an adult.",
+    description:
+      "For guests aged 4–12. Children under 4 enter free with an adult.",
     priceCents: 600,
     currency: "EUR",
     stripePriceId: "price_mock_child_600",
@@ -239,7 +253,8 @@ export const reviews = [
     author: "Rihards P.",
     rating: 4,
     date: "2026-10-21",
-    comment: "The timetable was easy to compare and the family screening was perfect.",
+    comment:
+      "The timetable was easy to compare and the family screening was perfect.",
     movieId: "movie-small-giants",
   },
   {
@@ -247,7 +262,8 @@ export const reviews = [
     author: "Marta S.",
     rating: 5,
     date: "2026-10-25",
-    comment: "Loved the IMAX experience and being able to choose seats before paying.",
+    comment:
+      "Loved the IMAX experience and being able to choose seats before paying.",
     movieId: "movie-neon-horizon",
   },
 ] satisfies Review[];
@@ -263,4 +279,3 @@ export const siteContact = {
     facebook: "https://facebook.com/cinegate",
   },
 } as const;
-

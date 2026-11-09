@@ -56,8 +56,12 @@ export function PageHeading({
       <p className="font-heading text-xl font-extralight uppercase tracking-[0.15em] text-purple-700">
         {eyebrow}
       </p>
-      <h1 className="text-3xl font-bold tracking-tight text-slate-950 sm:text-5xl">{title}</h1>
-      <p className="text-base leading-7 text-slate-600 sm:text-lg">{description}</p>
+      <h1 className="text-3xl font-bold tracking-tight text-slate-950 sm:text-5xl">
+        {title}
+      </h1>
+      <p className="text-base leading-7 text-slate-600 sm:text-lg">
+        {description}
+      </p>
     </header>
   );
 }
